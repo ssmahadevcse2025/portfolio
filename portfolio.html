@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shenbaga maha devan S - Professional Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0f172a;
+    color: #334155;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 18mm 20mm 16mm 20mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header & Footer Decorators */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+
+  .page-header-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2563eb;
+  }
+
+  .page-header-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    margin-top: auto;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+
+  .page-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .page-number {
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+
+  /* Section Styling */
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title span.accent {
+    color: #2563eb;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .accent-bar {
+    width: 45px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  /* Components */
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .card-highlight {
+    background: #ffffff;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 8px;
+  }
+
+  .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .tag-dark {
+    background: #0f172a;
+    color: #38bdf8;
+    border: 1px solid #1e293b;
+  }
+
+  .tag-placeholder {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px dashed #cbd5e1;
+  }
+
+  .badge-status {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .status-winner { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+  .status-shortlisted { background: #fef9c3; color: #a16207; border: 1px solid #fde047; }
+  .status-participated { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* PAGE 1: COVER */
+  .cover-page {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+    color: #ffffff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .cover-bg-accent {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+    border-radius: 50%;
+  }
+
+  .cover-content {
+    padding: 40mm 22mm 20mm 22mm;
+    z-index: 2;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+  }
+
+  .cover-name {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cover-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 16px;
+  }
+
+  .cover-tagline {
+    font-size: 13.5px;
+    color: #94a3b8;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    padding-left: 14px;
+    border-left: 3px solid #2563eb;
+  }
+
+  .cover-contact-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 18px 22px;
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .cover-contact-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cover-contact-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  .cover-contact-value {
+    font-size: 12px;
+    color: #e2e8f0;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .cover-contact-value a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+
+  .cover-footer {
+    padding: 16mm 22mm;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .cover-footer-text {
+    font-size: 11px;
+    color: #64748b;
+  }
+
+  /* List & Text styling */
+  p.body-text {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 10px;
+  }
+
+  ul.feature-list {
+    margin: 6px 0 10px 16px;
+    padding: 0;
+  }
+
+  ul.feature-list li {
+    font-size: 12px;
+    color: #475569;
+    margin-bottom: 5px;
+    line-height: 1.45;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    border-left: 2px solid #e2e8f0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 2px solid #ffffff;
+  }
+
+  .timeline-date {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  /* Skill Category Box */
+  .skill-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+  }
+
+  .skill-card-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 5px;
+  }
+
+  .skill-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  /* QR code display */
+  .qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .qr-box img {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 6px;
+  }
+
+  .qr-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .qr-subtext {
+    font-size: 9px;
+    color: #64748b;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page cover-page">
+    <div class="cover-bg-accent"></div>
+    <div class="cover-content">
+      <div class="cover-badge">
+        <span>●</span> Professional Portfolio
+      </div>
+      <h1 class="cover-name">Shenbaga<br>maha devan S</h1>
+      <div class="cover-title">Computer Science Engineering Student</div>
+      <div class="cover-tagline">
+        Data Science & AI Enthusiast | Full-Stack Developer | Agriculture-Tech Innovator & Problem Solver
+      </div>
+
+      <div class="cover-contact-box">
+        <div class="cover-contact-item">
+          <span class="cover-contact-label">Location</span>
+          <span class="cover-contact-value">Tenkasi, Tamil Nadu, India</span>
+        </div>
+        <div class="cover-contact-item">
+          <span class="cover-contact-label">Email</span>
+          <span class="cover-contact-value"><a href="mailto:ssmahadev007@gmail.com">ssmahadev007@gmail.com</a></span>
+        </div>
+        <div class="cover-contact-item">
+          <span class="cover-contact-label">LinkedIn</span>
+          <span class="cover-contact-value"><a href="https://www.linkedin.com/in/shenbaga-maha-devan-s" target="_blank">linkedin.com/in/shenbaga-maha-devan-s</a></span>
+        </div>
+        <div class="cover-contact-item">
+          <span class="cover-contact-label">GitHub</span>
+          <span class="cover-contact-value"><a href="https://github.com" target="_blank">[Add GitHub Link]</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-text">Chennai Institute of Technology | BE Computer Science (2025)</div>
+      <div class="cover-footer-text">Confidential & Recruiter-Friendly Portfolio</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: ABOUT ME -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">About Me</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Professional <span class="accent">Summary</span></div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 18px;">
+        <p class="body-text" style="font-size: 13.5px; font-weight: 500; color: #1e293b; margin-bottom: 10px;">
+          I am a dedicated Computer Science Engineering student at <strong>Chennai Institute of Technology</strong> with a passion for Artificial Intelligence, Data Science, and Software Development.
+        </p>
+        <p class="body-text">
+          I specialize in taking data-driven concepts and translating them into practical software applications. Having completed the <strong>Data Fundamentals Certification from IBM SkillsBuild</strong>, I possess a strong foundation in data analysis, data visualization, and structured decision-making processes.
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 18px;">
+        <div class="card">
+          <div class="card-title">Core Technical Focus</div>
+          <ul class="feature-list">
+            <li><strong>Data Science & AI:</strong> Data analysis, pattern extraction, IBM Watson integration, and visual analytics.</li>
+            <li><strong>Full-Stack & App Dev:</strong> Web application development, responsive layouts, and database integrations.</li>
+            <li><strong>Agri-Tech Solutions:</strong> Building technology prototypes to solve real-world agricultural challenges.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Engineering Mindset</div>
+          <ul class="feature-list">
+            <li><strong>Problem Solving:</strong> Structured approach to dissecting complex challenges into technical tasks.</li>
+            <li><strong>Continuous Learning:</strong> Constantly expanding technical depth in Python, databases, and AI frameworks.</li>
+            <li><strong>Target Roles:</strong> Preparing for software engineering, data science, and remote AI developer opportunities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="background: #eff6ff; border-color: #bfdbfe;">
+        <div class="card-title" style="color: #1d4ed8;">What Drives Me</div>
+        <p class="body-text" style="margin-bottom: 0;">
+          "I believe in continuous learning, consistency, and creating impactful technology solutions that make a tangible difference in everyday life."
+        </p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 02</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: EDUCATION -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Academic Background</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Education <span class="accent">Timeline</span></div>
+      <div class="accent-bar"></div>
+
+      <div style="margin-top: 8px;">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Graduation: September 2025</div>
+          <div class="card card-highlight">
+            <div class="card-title" style="font-size: 17px;">Chennai Institute of Technology</div>
+            <div class="card-subtitle">Bachelor of Engineering (B.E.) — Computer Science Engineering</div>
+            <p class="body-text">
+              Focusing on core computer science disciplines including Data Structures, Algorithms, Database Management Systems, Software Engineering, Artificial Intelligence, and Data Analytics.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Computer Science</span>
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Data Structures</span>
+              <span class="tag">Database Systems</span>
+              <span class="tag">Software Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: #64748b;"></div>
+          <div class="timeline-date" style="color: #64748b;">Higher Secondary Education</div>
+          <div class="card">
+            <div class="card-title" style="font-size: 16px;">VRC HSS School, Tenkasi</div>
+            <div class="card-subtitle" style="color: #64748b;">12th Grade — Science & Computer Stream</div>
+            <p class="body-text">
+              Specialized in Mathematics, Physics, Chemistry, and Computer Science. Built strong quantitative problem-solving skills and initial computer programming foundations.
+            </p>
+            <div class="tag-container">
+              <span class="tag tag-placeholder">Mathematics</span>
+              <span class="tag tag-placeholder">Physics</span>
+              <span class="tag tag-placeholder">Chemistry</span>
+              <span class="tag tag-placeholder">Computer Science</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top: 12px; background: #f8fafc; border: 1px dashed #cbd5e1;">
+        <div class="card-title" style="font-size: 13.5px;">Academic Commitment & Excellence</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 0;">
+          Combining rigorous academic coursework with hands-on self-learning through industry-recognized certifications like IBM SkillsBuild and practical project implementation.
+        </p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 03</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: TECHNICAL SKILLS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Technical Expertise</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Skills & <span class="accent">Competencies</span></div>
+      <div class="section-subtitle">Organized by core technical domains and verified capabilities</div>
+      <div class="accent-bar"></div>
+
+      <div class="grid-2" style="gap: 12px;">
+
+        <div class="skill-card">
+          <div class="skill-card-header">📊 Data Science & Analytics</div>
+          <div class="skill-item-list">
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Data-Driven Decision Making</span>
+            <span class="tag">Statistical Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">🤖 AI & Machine Learning</div>
+          <div class="skill-item-list">
+            <span class="tag">IBM Watson</span>
+            <span class="tag">AI Concepts</span>
+            <span class="tag">Predictive Analytics</span>
+            <span class="tag">Model Evaluation</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">💻 Programming Languages</div>
+          <div class="skill-item-list">
+            <span class="tag tag-dark">Python</span>
+            <span class="tag">C / C++ (Academic)</span>
+            <span class="tag">JavaScript Basics</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">🌐 Web Development</div>
+          <div class="skill-item-list">
+            <span class="tag">HTML5 / CSS3</span>
+            <span class="tag">Full-Stack Concepts</span>
+            <span class="tag">App Development Basics</span>
+            <span class="tag">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">🗄️ Databases</div>
+          <div class="skill-item-list">
+            <span class="tag">MongoDB (Certified)</span>
+            <span class="tag">NoSQL Document Stores</span>
+            <span class="tag">SQL Basics</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">🛠️ Tools & Platforms</div>
+          <div class="skill-item-list">
+            <span class="tag">IBM SkillsBuild</span>
+            <span class="tag">Git / GitHub <span class="tag-placeholder">[Link]</span></span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Jupyter Notebooks</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top: 14px;">
+        <div class="card-title" style="font-size: 13.5px;">🌾 Domain Specializations & Problem Solving</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 6px;">
+          Applied technical interests focused on creating real-world impact:
+        </p>
+        <div class="tag-container">
+          <span class="tag tag-dark">Agriculture-Based Technology Solutions</span>
+          <span class="tag tag-dark">Real-World Problem Solving</span>
+          <span class="tag tag-dark">Innovation & Prototyping</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 04</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5: PROJECTS (PART 1) -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Featured Projects</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Featured <span class="accent">Projects</span> (1 / 2)</div>
+      <div class="section-subtitle">Real-world applications and technology prototypes</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="card-title" style="font-size: 17px;">Agriculture-Based Technology Solutions</div>
+          <span class="tag tag-dark">Agri-Tech & AI</span>
+        </div>
+        <div class="card-subtitle">Smart Crop & Resource Optimization System</div>
+
+        <p class="body-text">
+          <strong>Problem Statement:</strong> Traditional agricultural practices often lack data-driven insights, leading to sub-optimal crop yield predictions and inefficient resource utilization.
+        </p>
+        <p class="body-text">
+          <strong>Solution & Features:</strong> Conceptualized and developed a prototype system leveraging Python data analysis to process agricultural environmental metrics, providing farmers with actionable insights.
+        </p>
+
+        <ul class="feature-list">
+          <li><strong>Data Analysis:</strong> Structured dataset processing for soil, climate, and crop metrics.</li>
+          <li><strong>Visualization:</strong> Clean visual dashboards for intuitive interpretation of trends.</li>
+          <li><strong>Impact:</strong> Demonstrates practical application of technology in sustainable farming.</li>
+        </ul>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 8px;">
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+          <a href="https://github.com" target="_blank" style="font-size: 11px; font-weight: 700; color: #2563eb; text-decoration: none;">[Add GitHub Repo Link] →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="card-title" style="font-size: 16px;">IBM Watson Data Analytics Pipeline</div>
+          <span class="tag">Data Science</span>
+        </div>
+        <div class="card-subtitle">Automated Data Insights & Visual Analytics</div>
+
+        <p class="body-text">
+          <strong>Overview:</strong> Built as part of the IBM SkillsBuild Data Fundamentals program to perform end-to-end data exploration, transformation, and visual reporting.
+        </p>
+        <ul class="feature-list">
+          <li>Preprocessed raw datasets to extract statistical patterns and key metrics.</li>
+          <li>Implemented IBM Watson-assisted visual dashboards for executive summary generation.</li>
+        </ul>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+          <div class="tag-container">
+            <span class="tag">IBM Watson</span>
+            <span class="tag">IBM SkillsBuild</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+          <a href="https://github.com" target="_blank" style="font-size: 11px; font-weight: 700; color: #2563eb; text-decoration: none;">[Add GitHub Repo Link] →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 05</span>
+    </div>
+  </div>
+
+  <!-- PAGE 6: PROJECTS (PART 2) -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Featured Projects</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Featured <span class="accent">Projects</span> (2 / 2)</div>
+      <div class="section-subtitle">Full-stack web applications and software prototypes</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="card-title" style="font-size: 17px;">Full-Stack Web & App Development Prototype</div>
+          <span class="tag tag-dark">Full-Stack</span>
+        </div>
+        <div class="card-subtitle">Modular Web Portal & NoSQL Database Integration</div>
+
+        <p class="body-text">
+          <strong>Problem Statement:</strong> Modern applications require seamless synchronization between interactive frontends and flexible, scalable document databases.
+        </p>
+        <p class="body-text">
+          <strong>Solution & Architecture:</strong> Designed a full-stack web application incorporating clean HTML/CSS web interfaces with MongoDB database connectivity for document storage.
+        </p>
+
+        <ul class="feature-list">
+          <li><strong>Frontend:</strong> Responsive interface built with HTML5, CSS3, and modern UI components.</li>
+          <li><strong>Database:</strong> Integrated MongoDB NoSQL backend for structured data operations.</li>
+          <li><strong>My Contribution:</strong> End-to-end architecture, UI layout design, and schema modeling.</li>
+        </ul>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 8px;">
+          <div class="tag-container">
+            <span class="tag">HTML5/CSS3</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Web Development</span>
+          </div>
+          <a href="https://github.com" target="_blank" style="font-size: 11px; font-weight: 700; color: #2563eb; text-decoration: none;">[Add GitHub Repo Link] →</a>
+        </div>
+      </div>
+
+      <div class="card" style="background: #f8fafc; border: 1px dashed #cbd5e1;">
+        <div class="card-title" style="font-size: 14.5px;">🚀 Upcoming Project Showcase Slot</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 8px;">
+          Currently working on expanding my project portfolio with new open-source repositories in AI-assisted analytics and web services.
+        </p>
+        <div class="tag-container">
+          <span class="tag tag-placeholder">[Add New Project Title]</span>
+          <span class="tag tag-placeholder">[Add Live Demo Link]</span>
+          <span class="tag tag-placeholder">[Add GitHub Repository]</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 06</span>
+    </div>
+  </div>
+
+  <!-- PAGE 7: HACKATHONS & COMPETITIONS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Competitions & Innovation</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Hackathons & <span class="accent">Competitions</span></div>
+      <div class="section-subtitle">Demonstrating teamwork, innovation, and rapid prototyping</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <div class="card-title" style="margin-bottom: 0; font-size: 15px;">Smart India Hackathon (SIH) / Innovation Challenge</div>
+          <span class="badge-status status-shortlisted">Shortlisted / Participant</span>
+        </div>
+        <div class="card-subtitle">Domain: Agriculture Technology & AI Solutions (2024–2025)</div>
+
+        <p class="body-text">
+          Participated in national-level innovation challenges to solve key agricultural and technology problem statements under strict time constraints.
+        </p>
+        <ul class="feature-list">
+          <li><strong>Role:</strong> Team Lead / Developer & Data Analyst.</li>
+          <li><strong>Project Idea:</strong> Tech-driven solution leveraging data insights for crop optimization.</li>
+          <li><strong>Outcome:</strong> Gained extensive experience in rapid prototyping and solution pitching.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <div class="card-title" style="margin-bottom: 0; font-size: 15px;">Chennai Institute of Technology Hackathon</div>
+          <span class="badge-status status-participated">Participant</span>
+        </div>
+        <div class="card-subtitle">Campus Tech & Software Competition (2024)</div>
+
+        <p class="body-text">
+          Engaged in competitive hackathon challenges focusing on full-stack web concepts, problem-solving, and collaborative software engineering.
+        </p>
+      </div>
+
+      <div class="card" style="background: #f8fafc; border: 1px dashed #cbd5e1;">
+        <div class="card-title" style="font-size: 13.5px; color: #64748b;">Future Hackathon Track Record</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 0;">
+          Actively preparing for upcoming national hackathons, coding contests, and open-source innovation challenges.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 07</span>
+    </div>
+  </div>
+
+  <!-- PAGE 8: CERTIFICATIONS & COURSES -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Credentials</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Certifications & <span class="accent">Courses</span></div>
+      <div class="section-subtitle">Verified industry qualifications and coursework</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <div class="card-title" style="font-size: 17px;">Data Fundamentals Certification</div>
+            <div class="card-subtitle">IBM SkillsBuild</div>
+          </div>
+          <span class="tag tag-dark">Verified Credential</span>
+        </div>
+
+        <p class="body-text">
+          Comprehensive industry training covering fundamental data principles, analytical workflows, data visualization techniques, and data-driven decision making.
+        </p>
+
+        <div style="margin-top: 8px;">
+          <strong style="font-size: 11.5px; color: #0f172a;">Key Knowledge Areas:</strong>
+          <div class="tag-container">
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">IBM Watson Concepts</span>
+            <span class="tag">Data Literacy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-highlight" style="margin-bottom: 16px; border-left-color: #10b981;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <div class="card-title" style="font-size: 17px;">MongoDB Basics for Students</div>
+            <div class="card-subtitle" style="color: #10b981;">MongoDB University</div>
+          </div>
+          <span class="tag" style="background: #ecfdf5; color: #047857; border-color: #a7f3d0;">Verified Credential</span>
+        </div>
+
+        <p class="body-text">
+          Foundational course on NoSQL database management, document data modeling, CRUD operations, indexing, and MongoDB Atlas cloud deployment concepts.
+        </p>
+
+        <div style="margin-top: 8px;">
+          <strong style="font-size: 11.5px; color: #0f172a;">Key Knowledge Areas:</strong>
+          <div class="tag-container">
+            <span class="tag">NoSQL Databases</span>
+            <span class="tag">Document Modeling</span>
+            <span class="tag">MongoDB Atlas</span>
+            <span class="tag">Querying & Indexing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background: #f8fafc; border: 1px dashed #cbd5e1;">
+        <div class="card-title" style="font-size: 13.5px;">Additional Learning Badges</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 0;">
+          Continuously enrolling in advanced coursework across Python for Data Science, Cloud Computing, and Machine Learning.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 08</span>
+    </div>
+  </div>
+
+  <!-- PAGE 9: EXPERIENCE / INTERNSHIPS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Experience</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Academic & Hands-On <span class="accent">Experience</span></div>
+      <div class="section-subtitle">Practical engineering & project-based experience</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <div class="card-title" style="font-size: 16px;">Student Developer & Data Engineering Practitioner</div>
+            <div class="card-subtitle">Chennai Institute of Technology</div>
+          </div>
+          <span class="tag">Academic Projects</span>
+        </div>
+
+        <p class="body-text" style="font-weight: 600; color: #0f172a; margin-bottom: 6px;">
+          Key Responsibilities & Highlights:
+        </p>
+
+        <ul class="feature-list">
+          <li>Designed and implemented data analytics and visualization workflows using Python data libraries.</li>
+          <li>Utilized IBM SkillsBuild framework to model structured datasets and implement data-driven decision-making processes.</li>
+          <li>Collaborated on agriculture-based technology solutions, bridging computer science principles with practical sector problems.</li>
+          <li>Built and tested full-stack web prototypes connected with MongoDB databases.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="background: #f8fafc; border: 1px dashed #cbd5e1; margin-top: 16px;">
+        <div class="card-title" style="font-size: 14px;">💼 Internship Readiness</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 8px;">
+          Actively seeking software engineering, data science, and AI developer internship opportunities to apply analytical and programming capabilities in corporate environments.
+        </p>
+        <div class="tag-container">
+          <span class="tag tag-placeholder">[Add Future Internship / Company Experience]</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 09</span>
+    </div>
+  </div>
+
+  <!-- PAGE 10: ACHIEVEMENTS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Recognitions</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Verified <span class="accent">Achievements</span></div>
+      <div class="section-subtitle">Academic accomplishments and technical milestones</div>
+      <div class="accent-bar"></div>
+
+      <div class="grid-2" style="gap: 14px;">
+
+        <div class="card card-highlight">
+          <div class="card-title">IBM SkillsBuild Certification</div>
+          <div class="card-subtitle">Data Fundamentals</div>
+          <p class="body-text" style="font-size: 12px;">
+            Earned official certification from IBM SkillsBuild in Data Fundamentals, demonstrating proficiency in data analysis, visualization, and decision-making concepts.
+          </p>
+        </div>
+
+        <div class="card card-highlight" style="border-left-color: #10b981;">
+          <div class="card-title">MongoDB University Credential</div>
+          <div class="card-subtitle" style="color: #10b981;">MongoDB Basics</div>
+          <p class="body-text" style="font-size: 12px;">
+            Successfully completed MongoDB Basics for Students, demonstrating skill in NoSQL database architecture and document querying.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Academic Admission & Standing</div>
+          <div class="card-subtitle">Chennai Institute of Technology</div>
+          <p class="body-text" style="font-size: 12px;">
+            Admitted to Bachelor of Engineering (BE) in Computer Science Engineering at Chennai Institute of Technology, maintaining focus on core CS subjects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Computer Science Foundations</div>
+          <div class="card-subtitle">VRC HSS School Tenkasi</div>
+          <p class="body-text" style="font-size: 12px;">
+            Completed Higher Secondary Education with Computer Science, Mathematics, Physics, and Chemistry stream, laying the foundation for engineering studies.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top: 14px; background: #f8fafc; border: 1px dashed #cbd5e1;">
+        <div class="card-title" style="font-size: 13.5px;">Future Milestones</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 0;">
+          Targeting research publications, open-source project contributions, and competitive coding milestones.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 10</span>
+    </div>
+  </div>
+
+  <!-- PAGE 11: CURRENT LEARNING & CAREER INTERESTS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Growth & Vision</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Current Learning & <span class="accent">Interests</span></div>
+      <div class="section-subtitle">Forward-looking goals and targeted career paths</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 14px;">
+        <div class="card-title" style="font-size: 15px;">📚 What I Am Currently Learning</div>
+        <p class="body-text">
+          Continuously upgrading technical knowledge to stay aligned with modern industry trends:
+        </p>
+        <ul class="feature-list">
+          <li><strong>Advanced Python & AI Frameworks:</strong> Expanding from data analysis into machine learning models and predictive analytics.</li>
+          <li><strong>Full-Stack Modern Frameworks:</strong> Strengthening JavaScript, frontend libraries, and backend RESTful APIs.</li>
+          <li><strong>Cloud & Deployment:</strong> Exploring cloud deployment platforms and containerization basics.</li>
+        </ul>
+      </div>
+
+      <div class="grid-2" style="gap: 14px; margin-bottom: 14px;">
+        <div class="card">
+          <div class="card-title" style="font-size: 14px;">🎯 Career Target Roles</div>
+          <ul class="feature-list">
+            <li>Data Analyst / Data Science Intern</li>
+            <li>Remote AI & Software Developer</li>
+            <li>Full-Stack Web Developer</li>
+            <li>Agri-Tech Solutions Developer</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="font-size: 14px;">🌟 Specialization Areas</div>
+          <ul class="feature-list">
+            <li>Artificial Intelligence & Watson Services</li>
+            <li>Data Visualization & BI Dashboards</li>
+            <li>Agriculture-Based Tech Systems</li>
+            <li>Database Architecture (NoSQL / MongoDB)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="background: #eff6ff; border-color: #bfdbfe;">
+        <div class="card-title" style="color: #1d4ed8; font-size: 13.5px;">Open to Opportunities</div>
+        <p class="body-text" style="font-size: 12px; margin-bottom: 0;">
+          Eager to join innovative tech teams, hackathon groups, and software projects where I can contribute my skills in Data Science, AI, and Full-Stack development.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 11</span>
+    </div>
+  </div>
+
+  <!-- PAGE 12: CONTACT & LINKS -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <span class="page-header-title">Connect</span>
+        <span class="page-header-name">Shenbaga maha devan S</span>
+      </div>
+      <div class="section-title">Get In <span class="accent">Touch</span></div>
+      <div class="section-subtitle">Let's connect, collaborate, and build impactful technology solutions</div>
+      <div class="accent-bar"></div>
+
+      <div class="card card-highlight" style="margin-bottom: 20px;">
+        <div class="card-title" style="font-size: 20px; color: #0f172a;">Shenbaga maha devan S</div>
+        <div class="card-subtitle" style="font-size: 13px; margin-bottom: 14px;">Student at Chennai Institute of Technology | BE Computer Science (2025)</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div>
+            <div style="font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase;">Email Address</div>
+            <div style="font-size: 12.5px; font-weight: 600; color: #2563eb; margin-bottom: 10px;">
+              <a href="mailto:ssmahadev007@gmail.com" style="color: #2563eb; text-decoration: none;">ssmahadev007@gmail.com</a>
+            </div>
+
+            <div style="font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase;">Phone</div>
+            <div style="font-size: 12.5px; font-weight: 600; color: #0f172a; margin-bottom: 10px;">+91 9488290875</div>
+          </div>
+
+          <div>
+            <div style="font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase;">Location</div>
+            <div style="font-size: 12.5px; font-weight: 600; color: #0f172a; margin-bottom: 10px;">Tenkasi, Tamil Nadu, India</div>
+
+            <div style="font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase;">LinkedIn Profile</div>
+            <div style="font-size: 12.5px; font-weight: 600; color: #2563eb;">
+              <a href="https://www.linkedin.com/in/shenbaga-maha-devan-s" target="_blank" style="color: #2563eb; text-decoration: none;">linkedin.com/in/shenbaga-maha-devan-s</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 20px;">
+        <div class="qr-box">
+          <img src="linkedin_qr.png" alt="LinkedIn QR Code">
+          <div class="qr-label">LinkedIn Profile</div>
+          <div class="qr-subtext">Scan to connect on LinkedIn</div>
+        </div>
+
+        <div class="qr-box">
+          <img src="github_qr.png" alt="GitHub QR Code">
+          <div class="qr-label">GitHub Repository</div>
+          <div class="qr-subtext">Scan to view GitHub portfolio</div>
+        </div>
+      </div>
+
+      <div class="card" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; text-align: center; padding: 20px;">
+        <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #38bdf8;">
+          "Let's connect, collaborate, and build meaningful technology solutions."
+        </div>
+        <div style="font-size: 11.5px; color: #94a3b8;">
+          Open for Internship & Entry-Level Developer Opportunities
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Shenbaga maha devan S — Portfolio</span>
+      <span class="page-number">Page 12</span>
+    </div>
+  </div>
+
+</body>
+</html>
