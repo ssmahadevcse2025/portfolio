@@ -1,112 +1,77 @@
-# Shenbaga maha devan S — Professional Tech Portfolio Website & PDF Deliverables
+# ⚡ Shenbaga Maha Devan S — Cinematic Cybernetic Developer Portfolio
 
-This repository contains the **Personal Developer & Data Science Portfolio Website** built with **React 18, Vite, Framer Motion, and Tailwind CSS**, along with the high-resolution 12-page **PDF Portfolio** compiled from verified LinkedIn profile information.
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.x-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
+
+A **Cinematic Cybernetic Portfolio Website** built for **Shenbaga Maha Devan S** — Data Science & AI/ML Engineer and Computer Science & Engineering student at **Chennai Institute of Technology (2025–2029)**.
+
+Inspired by futuristic sci-fi HUD command centers and high-end interactive portfolios.
+
+---
+
+## 🌟 Key Features
+
+- 🌌 **Dynamic Canvas Starfield & Nebula**: Real-time particle field with twinkling stars, cursor parallax tracking, and occasional meteors.
+- 💻 **Interactive Hacker Terminal OS (`TerminalView`)**: In-browser CLI emulator with ASCII banner, custom commands (`whoami`, `skills`, `projects`, `achievements`, `matrix`, `contact`, `resume`), accessible via button or global hotkey (`` ` `` / `~`).
+- 🔊 **Procedural Web Audio Sound Engine (`soundFx`)**: Synthesized hover clicks, terminal beeps, and ambient drone without external audio file dependencies.
+- 📊 **Live AI HUD Radar**: Real-time animated neural network / crime prediction clustering graph widget.
+- 🚀 **Production Deployments Showcase**: Interactive cards for **DataHawks (KSP Crime Analytics)**, **Queue Cure (MERN Hospital Queue System)**, and **DarshanAI (Smart Temple AI System)**.
+- 🏆 **Competitive Coding Milestone**: 440+ LeetCode problems solved with 100-Day badge and interactive algorithm code window.
+- 📡 **Encrypted Transmission Console**: One-click coordinate copying (email, phone, location) and transmission contact form.
 
 ---
 
 ## 🚀 Quick Start (Running Locally)
 
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+# 1. Clone repository
+git clone https://github.com/ssmahadevcse2025/portfolio.git
+cd portfolio
 
-2. **Start Development Server**:
-   ```bash
-   npm run dev
-   ```
-   Open your browser at `http://localhost:3000`.
+# 2. Install dependencies
+npm install
 
-3. **Build for Production**:
-   ```bash
-   npm run build
-   ```
-   The production-ready static bundle will be generated in `dist/`.
-
----
-
-## 🛠️ How to Update Portfolio Data
-
-All portfolio data is centralized in **`src/data/portfolioData.js`**. You can easily update:
-
-- **Personal Details & Social Links**: `personalInfo` (Name, email, location, GitHub URL, LinkedIn URL).
-- **Featured Projects**: `projects` array (Add new projects with problem, solution, features, contribution, live demo link, and GitHub repo URL).
-- **Skills Categories**: `skillCategories` array (Add programming languages, AI models, databases, or analytics tools).
-- **Certifications**: `certifications` array (Add new credentials, issuer name, and verification links).
-- **Hackathons**: `hackathons` array (Update statuses: `Winner`, `Finalist`, `Shortlisted`, `Participant`).
-
----
-
-## 📄 Updating Your PDF Resume
-
-The portfolio links directly to your generated PDF resume stored in the `public/` folder:
-
-1. Place your updated PDF file in the `public/` directory:
-   `public/Shenbaga_maha_devan_S_Professional_Portfolio.pdf`
-2. If you rename the file, update the filename in `src/data/portfolioData.js`:
-   ```javascript
-   resumeUrl: "/Your_New_Resume_Filename.pdf"
-   ```
-
----
-
-## 🌐 Deploying to Vercel or Netlify
-
-### Option 1: Deploy to Vercel (Recommended)
-1. Push this project folder to a GitHub repository.
-2. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Import your GitHub repository.
-4. Framework Preset will automatically detect **Vite**.
-5. Click **"Deploy"**.
-
-### Option 2: Deploy to Netlify
-1. Log in to [Netlify](https://www.netlify.com).
-2. Drag and drop the `dist/` folder directly into Netlify's upload zone, or connect your GitHub repository.
-3. Build Command: `npm run build`
-4. Publish Directory: `dist`
-
----
-
-## 🔗 Connecting a Custom Domain
-
-1. In Vercel or Netlify, navigate to **Project Settings → Domains**.
-2. Add your custom domain (e.g. `shenbagamahadevan.dev`).
-3. Update your DNS settings at your domain registrar (Namecheap, GoDaddy, Cloudflare, etc.):
-   - **CNAME Record**: `cname.vercel-dns.com` or `apex-loadbalancer.netlify.com`
-   - **A Record**: `76.76.21.21` (Vercel) or `75.2.60.5` (Netlify)
-
----
-
-## 📂 Project Directory Structure
-
+# 3. Start development server
+npm run dev
 ```
-portf/
-├── public/
-│   ├── Shenbaga_maha_devan_S_Professional_Portfolio.pdf
-│   ├── Shenbaga_maha_devan_S_Professional_Portfolio_Digital.pdf
-│   ├── linkedin_qr.png
-│   └── github_qr.png
-├── src/
-│   ├── main.jsx
-│   ├── App.jsx
-│   ├── index.css
-│   ├── data/
-│   │   └── portfolioData.js     <-- Centralized Data Source
-│   └── components/
-│       ├── Navbar.jsx
-│       ├── Hero.jsx
-│       ├── About.jsx
-│       ├── Skills.jsx
-│       ├── Projects.jsx
-│       ├── Experience.jsx
-│       ├── Education.jsx
-│       ├── Hackathons.jsx
-│       ├── Certifications.jsx
-│       ├── GithubSection.jsx
-│       ├── ResumeSection.jsx
-│       ├── Contact.jsx
-│       └── Footer.jsx
-├── package.json
-├── vite.config.js
-└── README.md
+
+Open your browser at `http://localhost:5173`.
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
 ```
+
+Generates optimized, minified production assets in `dist/`.
+
+---
+
+## 🌐 1-Click Vercel Deployment
+
+1. Import this repository into [Vercel](https://vercel.com).
+2. **Framework Preset**: Vite
+3. **Build Command**: `npm run build`
+4. **Output Directory**: `dist`
+5. Click **Deploy**.
+
+---
+
+## 🛠️ Centralized Data Configuration
+
+All personal information, projects, skills, education, and credentials are maintained in:
+`src/data/portfolioData.js`
+
+---
+
+## 👤 Author
+
+**Shenbaga Maha Devan S**
+- 💼 [LinkedIn](https://www.linkedin.com/in/shenbaga-maha-devan-s)
+- 🐙 [GitHub](https://github.com/ssmahadevcse2025)
+- ⚡ [LeetCode](https://leetcode.com/Ssmahadev_CSE_2529)
+- 📧 ssmahadev007@gmail.com
